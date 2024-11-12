@@ -1,7 +1,7 @@
 <?php
 
 class Team {
-    private $teamName;
+    private $teamName ="";
     private $totalPoints = 0;
     private $totalGames = 0;
     private $totalGoals = 0;
@@ -12,7 +12,7 @@ class Team {
     }
 
     public function finalScore($homeScore,$awayScore){
-        $this->totalGames += 1;
+        $this->totalGames++;
         $this->totalGoals += $homeScore;
 
         if ($homeScore > $awayScore) {
@@ -22,24 +22,12 @@ class Team {
         }
     }
 
-    public function getTotalPoints(){
-    return $this->totalPoints;
-    }
-
-    public function getTotalGames(){
-        return $this->totalGames;
-    }
-
-    public function getTotalGoals(){
-        return $this->totalGoals;
-    }
-
     public function getGoalAverage() {
         if ($this->totalGames > 0) {
             return $this->totalGoals / $this->totalGames; 
-            }
-        return 0; 
-    }
+        }
+            return 0; 
+        }
 }
 
 ?>

@@ -16,7 +16,7 @@ class Team {
         $this->totalGoals += $homeScore;
 
         if ($homeScore > $awayScore) {
-        $this->totalPoints += 2;
+        $this->totalPoints += 3;
         } elseif ($homeScore == $awayScore) {
         $this->totalPoints += 1;
         }
@@ -32,6 +32,13 @@ class Team {
 
     public function getTotalGoals(){
         return $this->totalGoals;
+    }
+
+    public function getGoalAverage() {
+        if ($this->totalGames > 0) {
+            return $this->totalGoals / $this->totalGames; 
+            }
+        return 0; 
     }
 }
 
